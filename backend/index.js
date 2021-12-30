@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+require("./startup/db")();
+
 app.get("/", (req, res) => {
   res.send("Welcome to Pencil Publications !!!");
 });
