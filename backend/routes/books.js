@@ -57,6 +57,7 @@ router.put("/:id", async (req, res) => {
   const price = toBengaliNumber(req.body.price).toString();
   const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
   const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
+  const genre = await Genre.findById(req.body.genreId);
   if (!genre) {
     return res.status(404).send("Invalid Genre");
   }
