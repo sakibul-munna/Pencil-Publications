@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+const { genreSchema } = require("./genre");
 
 const bookSchema = new mongoose.Schema({
   title: {
@@ -16,12 +17,9 @@ const bookSchema = new mongoose.Schema({
     maxLength: 255,
     trim: true,
   },
-  type: {
-    type: String,
+  genre: {
+    type: genreSchema,
     required: true,
-    minLength: 3,
-    maxLength: 255,
-    trim: true,
   },
   price: {
     type: String,
@@ -52,7 +50,7 @@ function validateBook(book) {
   const schema = Joi.object({
     title: Joi.string().min(3).required(),
     author: Joi.string().min(3).required(),
-    type: Joi.string().min(3).required(),
+    genreId: Joi.string().required(),
     price: Joi.number().min(0).required(),
     publishedYear: Joi.number().min(2019).required(),
     pageNumber: Joi.number().min(1).required(),

@@ -3,6 +3,7 @@ const router = express.Router();
 const { toBengaliNumber } = require("bengali-number");
 
 const { Book, validateBook } = require("../models/book");
+const { Genre } = require("../models/genre");
 
 router.get("/", async (req, res) => {
   const books = await Book.find().sort("-publishedYear");
@@ -25,10 +26,18 @@ router.post("/", async (req, res) => {
   const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
   const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
 
+  const genre = await Genre.findById(req.body.genreId);
+  if (!genre) {
+    return res.status(404).send("Invalid Genre");
+  }
+
   const book = new Book({
     title: req.body.title,
     author: req.body.author,
-    type: req.body.type,
+    genre: {
+      _id: genre._id,
+      name: genre.name,
+    },
     price: price,
     pageNumber: pageNumber,
     publishedYear: publishedYear,
@@ -48,16 +57,24 @@ router.put("/:id", async (req, res) => {
   const price = toBengaliNumber(req.body.price).toString();
   const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
   const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
+  if (!genre) {
+    return res.status(404).send("Invalid Genre");
+  }
 
   const book = await Book.findByIdAndUpdate(
     req.params.id,
     {
-      title: req.body.title,
-      author: req.body.author,
-      type: req.body.type,
-      price: price,
-      pageNumber: pageNumber,
-      publishedYear: publishedYear,
+      $set: {
+        title: req.body.title,
+        author: req.body.author,
+        genre: {
+          _id: genre._id,
+          name: genre.name,
+        },
+        price: price,
+        pageNumber: pageNumber,
+        publishedYear: publishedYear,
+      },
     },
     { new: true }
   );
