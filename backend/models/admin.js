@@ -26,14 +26,14 @@ const Admin = mongoose.model(
   })
 );
 
-function ValidateAdmin(user) {
+function ValidateAdmin(admin) {
   const schema = Joi.object({
     name: Joi.string().min(5).max(255).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
   });
 
-  return schema.validate(user);
+  return schema.validate(admin);
 }
 
 module.exports.Admin = Admin;
