@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Joi = require("joi");
+const config = require("config");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -22,7 +23,7 @@ router.post("/", async (req, res) => {
   }
 
   try {
-    const token = jwt.sign({ _id: admin._id }, "jwtPrivateKey");
+    const token = jwt.sign({ _id: admin._id }, config.get("jwtPrivateKey"));
     res.send(token);
   } catch (error) {
     res.status(400).send(error);
