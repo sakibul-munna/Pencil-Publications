@@ -3,6 +3,7 @@ const router = express.Router();
 const Joi = require("joi");
 
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const { Admin } = require("../models/admin");
 
@@ -10,18 +11,19 @@ router.post("/", async (req, res) => {
   const { error } = Validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let user = await Admin.findOne({ email: req.body.email });
-  if (!user) {
+  let admin = await Admin.findOne({ email: req.body.email });
+  if (!admin) {
     return res.status(400).send("Invalid Email or Password");
   }
 
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
+  const validPassword = await bcrypt.compare(req.body.password, admin.password);
   if (!validPassword) {
     return res.status(400).send("Invalid Email or Password");
   }
 
   try {
-    res.send(true);
+    const token = jwt.sign({ _id: admin._id }, "jwtPrivateKey");
+    res.send(token);
   } catch (error) {
     res.status(400).send(error);
   }
