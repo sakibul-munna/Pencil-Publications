@@ -34,7 +34,10 @@ router.post("/", async (req, res) => {
 
   try {
     await admin.save();
-    res.send(_.pick(admin, ["_id", "name", "email"]));
+    const token = admin.generateAuthToken();
+    res
+      .header("x-auth-token", token)
+      .send(_.pick(admin, ["_id", "name", "email"]));
   } catch (error) {
     res.status(400).send(error);
   }
