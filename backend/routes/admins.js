@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const _ = require("lodash");
+const bcrypt = require("bcrypt");
 
 const { Admin, validateAdmin } = require("../models/admin");
 
@@ -27,6 +28,9 @@ router.post("/", async (req, res) => {
   }
 
   admin = new Admin(_.pick(req.body, ["name", "email", "password"]));
+
+  const salt = await bcrypt.genSalt(10);
+  admin.password = await bcrypt.hash(admin.password, salt);
 
   try {
     await admin.save();
