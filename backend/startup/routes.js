@@ -3,6 +3,7 @@ const genres = require("../routes/genres");
 const books = require("../routes/books");
 const authors = require("../routes/authors");
 const admins = require("../routes/admins");
+const auth = require("../routes/auth");
 
 module.exports = function (app) {
   app.use(express.json());
@@ -10,4 +11,5 @@ module.exports = function (app) {
   app.use("/api/books", books);
   app.use("/api/authors", authors);
   app.use("/api/admins", admins);
+  app.use("/api/auth", auth);
 };
