@@ -3,6 +3,8 @@ const router = express.Router();
 
 const { Author, validateAuthor } = require("../models/author");
 
+const auth = require("../middleware/auth");
+
 router.get("/", async (req, res) => {
   const authors = await Author.find().sort("name");
   res.send(authors);
@@ -16,7 +18,7 @@ router.get("/:id", async (req, res) => {
   res.send(author);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const { error } = validateAuthor(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -29,7 +31,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   const { error } = validateAuthor(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -45,7 +47,7 @@ router.put("/:id", async (req, res) => {
   res.send(author);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   const author = await Author.findByIdAndRemove(req.params.id);
   if (!author) {
     return res.status(404).send("The author with the given ID was not found!");
