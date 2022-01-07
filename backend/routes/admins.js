@@ -5,17 +5,18 @@ const bcrypt = require("bcrypt");
 
 const { Admin, validateAdmin } = require("../models/admin");
 
-router.get("/", async (req, res) => {
-  const admins = await Admin.find();
-  res.send(admins);
-});
+const auth = require("../middleware/auth");
 
-router.get("/:id", async (req, res) => {
-  const admin = await Admin.findById(req.params.id);
-  if (!admin) {
-    return res.status(404).send("The admin with the given ID was not found!");
+router.get("/me", auth, async (req, res) => {
+  try {
+    const admin = await Admin.findById(req.user._id).select("-password");
+    if (!admin) {
+      return res.status(404).send("The admin with the given ID was not found!");
+    }
+    res.send(admin);
+  } catch (error) {
+    res.status(400).send(error.message);
   }
-  res.send(_.pick(admin, ["_id", "name", "email"]));
 });
 
 router.post("/", async (req, res) => {
@@ -41,34 +42,6 @@ router.post("/", async (req, res) => {
   } catch (error) {
     res.status(400).send(error);
   }
-});
-
-router.put("/:id", async (req, res) => {
-  const { error } = validateAdmin(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
-  const admin = await Admin.findByIdAndUpdate(
-    req.params.id,
-    {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    },
-    { new: true }
-  );
-  if (!admin) {
-    return res.status(404).send("The admin with the given ID was not found!");
-  }
-
-  res.send(_.pick(admin, ["_id", "name", "email"]));
-});
-
-router.delete("/:id", async (req, res) => {
-  const admin = await Admin.findByIdAndRemove(req.params.id);
-  if (!admin) {
-    return res.status(404).send("The admin with the given ID was not found!");
-  }
-  res.send(_.pick(admin, ["_id", "name", "email"]));
 });
 
 module.exports = router;
