@@ -50,7 +50,7 @@ function validateBook(book) {
   const schema = Joi.object({
     title: Joi.string().min(3).required(),
     author: Joi.string().min(3).required(),
-    genreId: Joi.string().required(),
+    genreId: Joi.objectId().required(),
     price: Joi.number().min(0).required(),
     publishedYear: Joi.number().min(2019).required(),
     pageNumber: Joi.number().min(1).required(),
