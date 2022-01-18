@@ -13,6 +13,8 @@ app.get("/", (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   winston.info(`Listening on Port ${port}...`);
 });
+
+module.exports = server;
