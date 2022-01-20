@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 let server;
 
 const { Genre } = require("../../models/genre");
+const { Admin } = require("../../models/admin");
 
 describe("/api/genres", () => {
   beforeEach(() => {
@@ -49,6 +50,63 @@ describe("/api/genres", () => {
       const res = await request(server).get("/api/genres/" + objId);
 
       expect(res.status).toBe(404);
+    });
+  });
+
+  describe("POST /", () => {
+    let token;
+    let name;
+
+    const execute = async () => {
+      return await request(server)
+        .post("/api/genres")
+        .set("x-auth-token", token)
+        .send({ name });
+    };
+
+    beforeEach(() => {
+      token = new Admin().generateAuthToken();
+      name = "genre1";
+    });
+
+    it("should return a 401 if the client is not logged in.", async () => {
+      token = "";
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(401);
+    });
+
+    it("should return a 400 if the length of given genre is less than 3 characters", async () => {
+      name = "12";
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(400);
+    });
+
+    it("should return a 400 if the length of given genre is greater than 50 characters", async () => {
+      name = new Array(52).join("a");
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(400);
+    });
+
+    it("should save a given genre if it is valid - HP 1", async () => {
+      const res = await execute();
+
+      const genre = await Genre.find({ name: "genre1" });
+
+      expect(genre).not.toBeNull();
+      expect(res.statusCode).toBe(200);
+    });
+
+    it("should return the given genre after saving, if it is valid - HP 2", async () => {
+      const res = await execute();
+
+      expect(res.body).toHaveProperty("_id");
+      expect(res.body).toHaveProperty("name", "genre1");
     });
   });
 });
