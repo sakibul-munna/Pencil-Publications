@@ -109,4 +109,78 @@ describe("/api/genres", () => {
       expect(res.body).toHaveProperty("name", "genre1");
     });
   });
+
+  describe("PUT /", () => {
+    let token;
+    let newName;
+    let genre;
+    let objectId;
+
+    const execute = async () => {
+      return await request(server)
+        .put("/api/genres/" + objectId)
+        .set("x-auth-token", token)
+        .send({ name: newName });
+    };
+
+    beforeEach(async () => {
+      genre = new Genre({ name: "genre1" });
+      await genre.save();
+
+      token = new Admin().generateAuthToken();
+      objectId = genre._id;
+      newName = "updatedName";
+    });
+
+    it("should return a 401 if the client is not logged in.", async () => {
+      token = "";
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(401);
+    });
+
+    it("should return a 400 if the length of given genre is less than 3 characters", async () => {
+      newName = "12";
+
+      const res = await execute();
+
+      expect(res.status).toBe(400);
+    });
+
+    it("should return a 400 if the length of given genre is greater than 50 characters", async () => {
+      newName = new Array(52).join("a");
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(400);
+    });
+
+    it("should return 400 error if object id of params is invalid", async () => {
+      objectId = "1";
+      const res = await execute();
+      expect(res.status).toBe(400);
+    });
+
+    it("should return 404 error if the genre with the given id was not found", async () => {
+      objectId = mongoose.Types.ObjectId();
+      const res = await execute();
+      expect(res.status).toBe(404);
+    });
+
+    it("should update the given genre if it is valid - HP 1", async () => {
+      await execute();
+
+      const updatedGenre = await Genre.findById(genre._id);
+
+      expect(updatedGenre.name).toBe(newName);
+    });
+
+    it("should return the given genre after saving, if it is valid - HP 2", async () => {
+      const res = await execute();
+      console.log(res.body);
+      expect(res.body).toHaveProperty("_id");
+      expect(res.body).toHaveProperty("name", newName);
+    });
+  });
 });
