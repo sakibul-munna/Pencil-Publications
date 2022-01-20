@@ -183,4 +183,60 @@ describe("/api/genres", () => {
       expect(res.body).toHaveProperty("name", newName);
     });
   });
+
+  describe("DELETE /", () => {
+    let token;
+    let genre;
+    let objectId;
+
+    const execute = async () => {
+      return await request(server)
+        .delete("/api/genres/" + objectId)
+        .set("x-auth-token", token)
+        .send();
+    };
+
+    beforeEach(async () => {
+      genre = new Genre({ name: "genre1" });
+      await genre.save();
+
+      token = new Admin().generateAuthToken();
+      objectId = genre._id;
+    });
+
+    it("should return a 401 if the client is not logged in.", async () => {
+      token = "";
+
+      const res = await execute();
+
+      expect(res.statusCode).toBe(401);
+    });
+
+    it("should return 400 error if object id of params is invalid", async () => {
+      objectId = "1";
+      const res = await execute();
+      expect(res.status).toBe(400);
+    });
+
+    it("should return 404 error if the genre with the given id was not found", async () => {
+      objectId = mongoose.Types.ObjectId();
+      const res = await execute();
+      expect(res.status).toBe(404);
+    });
+
+    it("should delete the given genre if it is valid - HP 1", async () => {
+      await execute();
+
+      const updatedGenre = await Genre.findById(genre._id);
+
+      expect(updatedGenre).toBeNull();
+    });
+
+    it("should return the given genre after deleting, if it is valid - HP 2", async () => {
+      const res = await execute();
+      console.log(res.body);
+      expect(res.body).toHaveProperty("_id");
+      expect(res.body).toHaveProperty("name", genre.name);
+    });
+  });
 });
