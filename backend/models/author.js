@@ -5,7 +5,7 @@ const authorSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minLength: 3,
+    minLength: 5,
     maxLength: 255,
   },
 });
@@ -14,7 +14,7 @@ const Author = mongoose.model("Author", authorSchema);
 
 function ValidateAuthor(author) {
   const schema = Joi.object({
-    name: Joi.string().min(3).max(50).required(),
+    name: Joi.string().min(5).max(255).required(),
   });
 
   return schema.validate(author);
