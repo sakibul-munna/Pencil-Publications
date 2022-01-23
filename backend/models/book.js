@@ -13,7 +13,7 @@ const bookSchema = new mongoose.Schema({
   author: {
     type: String,
     required: true,
-    minLength: 3,
+    minLength: 5,
     maxLength: 255,
     trim: true,
   },
@@ -48,8 +48,8 @@ const Book = mongoose.model("Book", bookSchema);
 
 function validateBook(book) {
   const schema = Joi.object({
-    title: Joi.string().min(3).required(),
-    author: Joi.string().min(3).required(),
+    title: Joi.string().min(3).max(255).required(),
+    author: Joi.string().min(5).max(255).required(),
     genreId: Joi.objectId().required(),
     price: Joi.number().min(0).required(),
     publishedYear: Joi.number().min(2019).required(),
