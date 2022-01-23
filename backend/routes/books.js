@@ -5,6 +5,8 @@ const { toBengaliNumber } = require("bengali-number");
 const { Book, validateBook } = require("../models/book");
 const { Genre } = require("../models/genre");
 
+const inputValidator = require("../middleware/inputValidator");
+
 const auth = require("../middleware/auth");
 const objIdValidation = require("../middleware/objIdValidation");
 
@@ -21,10 +23,7 @@ router.get("/:id", objIdValidation, async (req, res) => {
   res.send(book);
 });
 
-router.post("/", auth, async (req, res) => {
-  const { error } = validateBook(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
+router.post("/", [auth, inputValidator(validateBook)], async (req, res) => {
   const price = toBengaliNumber(req.body.price).toString();
   const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
   const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
@@ -53,41 +52,42 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-router.put("/:id", [auth, objIdValidation], async (req, res) => {
-  const { error } = validateBook(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+router.put(
+  "/:id",
+  [auth, objIdValidation, inputValidator(validateBook)],
+  async (req, res) => {
+    const price = toBengaliNumber(req.body.price).toString();
+    const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
+    const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
+    const genre = await Genre.findById(req.body.genreId);
+    if (!genre) {
+      return res.status(404).send("Invalid Genre");
+    }
 
-  const price = toBengaliNumber(req.body.price).toString();
-  const pageNumber = toBengaliNumber(req.body.pageNumber).toString();
-  const publishedYear = toBengaliNumber(req.body.publishedYear).toString();
-  const genre = await Genre.findById(req.body.genreId);
-  if (!genre) {
-    return res.status(404).send("Invalid Genre");
-  }
-
-  const book = await Book.findByIdAndUpdate(
-    req.params.id,
-    {
-      $set: {
-        title: req.body.title,
-        author: req.body.author,
-        genre: {
-          _id: genre._id,
-          name: genre.name,
+    const book = await Book.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {
+          title: req.body.title,
+          author: req.body.author,
+          genre: {
+            _id: genre._id,
+            name: genre.name,
+          },
+          price: price,
+          pageNumber: pageNumber,
+          publishedYear: publishedYear,
         },
-        price: price,
-        pageNumber: pageNumber,
-        publishedYear: publishedYear,
       },
-    },
-    { new: true }
-  );
-  if (!book) {
-    return res.status(404).send("The book with the given ID was not found!");
-  }
+      { new: true }
+    );
+    if (!book) {
+      return res.status(404).send("The book with the given ID was not found!");
+    }
 
-  res.send(book);
-});
+    res.send(book);
+  }
+);
 
 router.delete("/:id", [auth, objIdValidation], async (req, res) => {
   const book = await Book.findByIdAndRemove(req.params.id);
