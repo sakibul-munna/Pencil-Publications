@@ -1,0 +1,23 @@
+{
+  "name": "pencil_publications",
+  "version": "1.0.0",
+  "description": "A basic website built using mern stack for a book publishing company called Pencil Publications.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakibul-munna/Pencil-Publications.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakibul-munna/Pencil-Publications/issues"
+  },
+  "homepage": "https://github.com/sakibul-munna/Pencil-Publications#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
