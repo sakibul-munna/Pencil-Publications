@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Pencil Publications Backend !!!");
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
   winston.info(`Listening on Port ${port}...`);
 });
