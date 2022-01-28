@@ -26,5 +26,25 @@
 }
 
 .footer-right{
-  align-items: flex-start;
+  text-align: left;
+}
+
+#footer-contents-left{
+  margin-left: -200px;
+  margin-top: 30px;
+}
+
+#footer-contents-right{
+  margin-left: 200px;
+}
+
+@media only screen and (max-width:900px) {
+  #footer-contents-left{
+    margin-left: 0px;
+  }
+  
+  #footer-contents-right{
+    margin-left: 30%;
+    margin-right: auto;
+  }
 }
