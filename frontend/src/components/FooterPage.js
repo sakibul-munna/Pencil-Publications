@@ -6,6 +6,8 @@ import {
     MDBRow,
 } from 'mdb-react-ui-kit';
 
+import "./Footer.css";
+
 const FooterPage = () => {
     return (
         <MDBFooter className='text-white text-center text-lg-left' style={{backgroundColor:"#388761"}}>
