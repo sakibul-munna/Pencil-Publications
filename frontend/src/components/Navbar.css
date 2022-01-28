@@ -8,11 +8,12 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
-.text {
+.text-dropdown {
   color: #000 !important;
-  margin-left: 20px !important;
 }
-.dropdown {
-  margin-left: 20px !important;
-  color: #000 !important;
+
+
+#nav-dropdown{
+  color: black;
+  font-weight: bold;
 }

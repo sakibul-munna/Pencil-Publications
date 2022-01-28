@@ -16,7 +16,7 @@ const Footer = () => {
               height="75px"
             />
             <div className="textContainer">
-              <p className="text">
+              <p className="text-footer">
                 বাংলা শিল্প-সাহিত্য কে নিয়ে যাব মোরা বিশ্বময়
               </p>
             </div>

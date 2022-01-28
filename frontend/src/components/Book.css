@@ -1,7 +1,7 @@
 .cardText {
   color: #000 !important;
   font-family: "Kalpurush", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 5px !important;
 }
 .bg-cardBackground {
@@ -12,3 +12,4 @@
     rgba(56, 135, 97, 1) 51%
   );
 }
+

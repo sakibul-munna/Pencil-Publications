@@ -24,47 +24,47 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="about" className="text">
+              <Nav.Link href="about" className="text-dropdown">
                 পেন্সিল কি
               </Nav.Link>
-              <NavDropdown title="আমাদের প্রকাশিত বইসমূহ" className="dropdown">
+              <NavDropdown title="আমাদের প্রকাশিত বইসমূহ" id="nav-dropdown">
                 <NavDropdown.Item href="books/2019">২০১৯</NavDropdown.Item>
                 <NavDropdown.Item href="books/2020">২০২০</NavDropdown.Item>
                 <NavDropdown.Item href="books/2021">২০২১</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="লেখকবৃন্দ" className="text">
+              <Nav.Link href="লেখকবৃন্দ" className="text-dropdown">
                 লেখকবৃন্দ
               </Nav.Link>
-              <NavDropdown title="বিষয়">
-                <NavDropdown.Item href="subject/উপন্যাস" className="text">
+              <NavDropdown title="বিষয়" id="nav-dropdown">
+                <NavDropdown.Item href="subject/উপন্যাস" className="text-dropdown">
                   উপন্যাস
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/গল্প" className="text">
+                <NavDropdown.Item href="subject/গল্প" className="text-dropdown">
                   গল্প
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/কবিতা" className="text">
+                <NavDropdown.Item href="subject/কবিতা" className="text-dropdown">
                   কবিতা
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/শিশুতোষ" className="text">
+                <NavDropdown.Item href="subject/শিশুতোষ" className="text-dropdown">
                   শিশুতোষ
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/রম্য" className="text">
+                <NavDropdown.Item href="subject/রম্য" className="text-dropdown">
                   রম্য
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/ভ্রমণকাহিণী" className="text">
+                <NavDropdown.Item href="subject/ভ্রমণকাহিণী" className="text-dropdown">
                   ভ্রমণকাহিণী
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/প্রবন্ধ" className="text">
+                <NavDropdown.Item href="subject/প্রবন্ধ" className="text-dropdown">
                   প্রবন্ধ
                 </NavDropdown.Item>
-                <NavDropdown.Item href="subject/খেলাধুলা" className="text">
+                <NavDropdown.Item href="subject/খেলাধুলা" className="text-dropdown">
                   খেলাধুলা
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="ব্লগ" className="text">
+              <Nav.Link href="ব্লগ" className="text-dropdown">
                 ব্লগ
               </Nav.Link>
-              <Nav.Link href="যোগাযোগ" className="text">
+              <Nav.Link href="যোগাযোগ" className="text-dropdown">
                 যোগাযোগ
               </Nav.Link>
             </Nav>

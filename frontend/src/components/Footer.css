@@ -6,7 +6,7 @@
   bottom: 0;
   width: 100%;
 }
-.text {
+.text-footer {
   color: #000 !important;
   font-family: "Kalpurush", sans-serif;
   font-size: 1.2rem;
@@ -14,5 +14,17 @@
 }
 .textContainer {
   margin: 2em;
-  justify-content: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-right{
+  align-items: flex-start;
 }
