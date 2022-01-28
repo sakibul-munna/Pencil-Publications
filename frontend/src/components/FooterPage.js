@@ -13,10 +13,10 @@ const FooterPage = () => {
                 <MDBRow>
                     <MDBCol lg='8' md='12' className='mb-4 mb-md-0' id='footer-contents-left'>
                         <h5 className='text-uppercase'><img
-                            src={require("../assets/logo.png")}
+                            src={require("../assets/logo-footer.png")}
                             alt="logo"
                             width="100px"
-                            height="75px"
+                            height="auto"
                         /></h5>
                         <p>
                             বাংলা শিল্প-সাহিত্য কে নিয়ে যাব মোরা বিশ্বময়
