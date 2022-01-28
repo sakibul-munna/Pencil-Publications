@@ -1,0 +1,18 @@
+.main-footer {
+  color: white;
+  background-color: #388761;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.text {
+  color: #000 !important;
+  font-family: "Kalpurush", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.textContainer {
+  margin: 2em;
+  justify-content: flex-end;
+}
