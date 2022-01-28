@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen";
 import FooterPage from "./components/FooterPage";
 
-
-
 const App = () => {
   return (
     <>
@@ -15,7 +13,7 @@ const App = () => {
           <HomeScreen />
         </Container>
       </main>
-      <FooterPage/>
+      <FooterPage />
     </>
   );
 };
