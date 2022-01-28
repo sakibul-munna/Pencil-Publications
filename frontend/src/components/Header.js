@@ -17,8 +17,8 @@ const Header = () => {
             <img
               src={require("../assets/logo.png")}
               alt="logo"
-              width="60px"
-              height="60px"
+              width="100px"
+              height="auto"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
