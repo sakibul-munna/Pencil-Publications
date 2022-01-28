@@ -6,10 +6,6 @@
 }
 .bg-cardBackground {
   background: rgb(255, 255, 255);
-  background-image: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(56, 135, 97, 1) 51%
-  );
+  background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 13%, rgba(6,104,57,1) 100%);
 }
 
