@@ -7,7 +7,7 @@ import AdContainer from "./components/AdContainer";
 
 const App = () => {
   return (
-    <>
+    <Container fluid className="gx-0">
       <Header />
       <HeaderContainer />
       <AdContainer />
@@ -17,7 +17,7 @@ const App = () => {
         </Container>
       </main>
       <Footer />
-    </>
+    </Container>
   );
 };
 
