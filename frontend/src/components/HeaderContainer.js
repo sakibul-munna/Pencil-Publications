@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
+import FacebookIcon from '@mui/icons-material/Facebook';
 import "./HeaderContainer.css";
 
 const HeaderContainer = () => {
@@ -8,7 +9,7 @@ const HeaderContainer = () => {
       <div className="headerContainer">
         <Container fluid="sm" style={{ padding: "50px" }}>
           <div className="headerContent">
-            <p className="text">
+            <p className="header-text">
               কালে চক্রে মননে মানসিকতায় মেল-বন্ধন খুঁজে পাওয়া কিছু মানুষের
               স্বপ্ন নিয়ে পেন্সিল। এদের ক'জন সব্যসাচী লেখিয়ে, কেউ একেবারেই
               আনকোরা- তবু সাহস করে প্রথম কদম রেখেছে লেখিয়েদের ভূ-খণ্ডে। আলো
@@ -22,7 +23,7 @@ const HeaderContainer = () => {
           </div>
           <div className="headerContent-button">
             <Button variant="outline-danger">
-              পেন্সিল ফেসবুক গ্রুপে জয়েন করার জন্য এইখানে ক্লিক করুন।
+              <FacebookIcon style={{color:"#3b5998" }}/> পেন্সিল ফেসবুক গ্রুপে জয়েন করার জন্য এইখানে ক্লিক করুন।
             </Button>{" "}
           </div>
         </Container>
