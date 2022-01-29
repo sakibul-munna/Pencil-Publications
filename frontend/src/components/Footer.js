@@ -34,14 +34,14 @@ const Footer = () => {
             id="footer-contents-right"
           >
             <div className="footer-right" style={{ textAlign: "left" }}>
-              <h5 className="text-uppercase mb-0">Our Office</h5>
+              <h5 className="text-uppercase mb-0" style={{paddingBottom:"15px"}}>Our Office</h5>
               <ui className="list-unstyled">
-                <h5>Dhaka Office:</h5>
+                <li style={{fontSize:"14pt"}}>Dhaka Office:</li>
                 <li>House: 1363</li>
                 <li>Road: 7, Avenue: 3</li>
                 <li>Mirpur DOHS, Dhaka</li>
-                <li>mail@pencilfoundation.com</li>
-                <li>info.pencilfoundation@gmail.com</li>
+                <li><i>mail@pencilfoundation.com</i></li>
+                <li><i>info.pencilfoundation@gmail.com</i></li>
               </ui>
             </div>
           </MDBCol>
