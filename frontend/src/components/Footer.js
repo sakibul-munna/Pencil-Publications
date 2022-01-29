@@ -8,7 +8,7 @@ const Footer = () => {
       className="text-white text-center text-lg-left"
       style={{ backgroundColor: "#388761" }}
     >
-      <MDBContainer className="p-4">
+      <MDBContainer fluid className="p-4">
         <MDBRow>
           <MDBCol
             lg="8"
