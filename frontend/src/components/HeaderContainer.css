@@ -1,0 +1,23 @@
+.headerContainer {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 31%,
+    rgba(255, 255, 255, 1) 39%,
+    rgba(6, 104, 57, 1) 100%
+  );
+  width: 100%;
+  height: auto;
+  font-family: "Kalpurush", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.headerContent {
+  text-align: center;
+}
+
+.headerContent-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
