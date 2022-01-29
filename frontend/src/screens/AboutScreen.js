@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const AboutScreen = () => {
   return (
-    <Container className="py-5 about-container">
+    <Container className="py-5 about-container" id="page-container">
       <Row>
         <Col sm={7}>
           <div
@@ -12,10 +12,10 @@ const AboutScreen = () => {
               justifyContent: "center",
               alignItems: "center",
               fontFamily: "Kalpurush",
-              fontWeight: "bold",
+              fontWeight: "500",
               fontSize: "1.2rem",
             }}
-          >
+            id="content-wrap">
             স্বপ্ন, আবেগ এবং প্রত্যাশার সমন্বয়ের নাম পেন্সিল, যা লক্ষ লক্ষ
             হৃদয়কে আলোকিত করে। পেন্সিলের লক্ষ্য নান্দনিক সমাজ গড়া।
             <br></br>
