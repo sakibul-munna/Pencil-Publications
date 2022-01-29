@@ -22,9 +22,12 @@ const HeaderContainer = () => {
             <br></br>
           </div>
           <div className="headerContent-button">
-            <Button variant="outline-danger">
-              <FacebookIcon style={{color:"#3b5998" }}/> পেন্সিল ফেসবুক গ্রুপে জয়েন করার জন্য এইখানে ক্লিক করুন।
-            </Button>{" "}
+            <a href="https://www.facebook.com/groups/pencilglobal">
+              <Button variant="outline-danger">
+                <FacebookIcon style={{ color: "#3b5998" }} />
+                পেন্সিল ফেসবুক গ্রুপে জয়েন করার জন্য এইখানে ক্লিক করুন।
+              </Button>{" "}
+            </a>
           </div>
         </Container>
       </div>
