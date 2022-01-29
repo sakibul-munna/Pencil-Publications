@@ -79,9 +79,9 @@ const Header = () => {
                 যোগাযোগ
               </Nav.Link>
             </Nav>
-            <hr className="h-line" />
           </Navbar.Collapse>
         </Container>
+       
       </Navbar>
     </header>
   );
