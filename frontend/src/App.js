@@ -1,21 +1,18 @@
 import { Container } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
 import Footer from "./components/Footer";
-import HeaderContainer from "./components/HeaderContainer";
-import AdContainer from "./components/AdContainer";
 
 const App = () => {
   return (
     <Container fluid className="gx-0">
       <Header />
-      <HeaderContainer />
-      <AdContainer />
-      <main className="py-5">
-        <Container>
-          <HomeScreen />
-        </Container>
-      </main>
+      <Routes>
+        <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/about" element={<AboutScreen />} />
+      </Routes>
       <Footer />
     </Container>
   );
