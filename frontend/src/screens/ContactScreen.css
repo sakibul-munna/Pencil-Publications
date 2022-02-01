@@ -1,0 +1,23 @@
+.contact-section {
+  font-size: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid #388761;
+}
+
+.contact-section-text {
+  font-size: 1.2rem;
+  color: #388761;
+}
+
+.contact-section-header-text {
+  font-size: 1.5rem;
+  color: #388761;
+}
+
+.hrline {
+  border-bottom: 6px solid #388761;
+}
+.contact-input-section {
+  border-radius: 25px;
+  border: 2px solid #388761;
+}
