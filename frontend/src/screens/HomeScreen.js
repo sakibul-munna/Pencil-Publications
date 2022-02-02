@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import books from "../books";
-import Book from "../components/Book";
+import BookCard from "../components/BookCard";
 import HeaderContainer from "../components/HeaderContainer";
 import AdContainer from "../components/AdContainer";
 import HomeText from "../components/HomeText";
@@ -16,7 +16,7 @@ const HomeScreen = () => {
         <Row>
           {books.map((book) => (
             <Col sm={12} md={6} lg={4} xl={3}>
-              <Book book={book} />
+              <BookCard book={book} />
             </Col>
           ))}
         </Row>

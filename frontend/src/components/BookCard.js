@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./Book.css";
 
-const Book = ({ book }) => {
+const BookCard = ({ book }) => {
   return (
     <Card className="my-3 p-3 rounded" bg="cardBackground">
       <Card.Img src={book.image} variant="top" />
@@ -20,4 +20,4 @@ const Book = ({ book }) => {
   );
 };
 
-export default Book;
+export default BookCard;
