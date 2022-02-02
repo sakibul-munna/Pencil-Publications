@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCardBody, MDBIcon, MDBInput } from "mdb-react-ui-kit";
+import { MDBIcon, MDBInput } from "mdb-react-ui-kit";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import "./ContactScreen.css";
 
@@ -46,17 +46,18 @@ const ContactScreen = () => {
                     rows={4}
                     className="contact-input-section"
                   />
-                  <Button className="my-3" variant="danger">
+                  <Button className="mt-3" variant="danger">
                     Send
                   </Button>
                 </div>
               </Col>
             </Row>
+            <Row className="py-3"></Row>
           </Card.Body>
         </Col>
         <Col lg="4">
-          <MDBCardBody className="contact-section-header-text text-center h-100 white-text">
-            <div className="my-3 mb-5">
+          <Card.Body className="contact-section-header-text text-center h-100 white-text">
+            <div className="my-3 mb-3">
               <h3>Contact Information</h3>
             </div>
             <Container>
@@ -64,8 +65,8 @@ const ContactScreen = () => {
                 <li>
                   <div className="my-2">
                     <MDBIcon
-                      icon="map-marker-alt"
-                      className="px-3 py-2 fa-lg"
+                      icon="map-marker"
+                      className="px-3 py-2 fa-2x"
                       style={{ color: "#dc3545" }}
                     />
                     <br></br>
@@ -79,7 +80,7 @@ const ContactScreen = () => {
                   <div className="my-2">
                     <MDBIcon
                       icon="phone"
-                      className="px-3 py-2 fa-lg"
+                      className="px-3 py-2 fa-2x"
                       style={{ color: "#dc3545" }}
                     />
                     <br></br>
@@ -93,7 +94,7 @@ const ContactScreen = () => {
                   <div className="my-2">
                     <MDBIcon
                       icon="envelope"
-                      className="px-3 py-2 fa-lg"
+                      className="px-3 py-2 fa-2x"
                       style={{ color: "#dc3545" }}
                     />
                     <br></br>
@@ -105,7 +106,7 @@ const ContactScreen = () => {
               </ul>
               <hr className="hrline" />
             </Container>
-          </MDBCardBody>
+          </Card.Body>
         </Col>
       </Row>
     </Container>
