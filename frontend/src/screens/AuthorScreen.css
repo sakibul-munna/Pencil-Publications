@@ -1,0 +1,10 @@
+.authors-section-header-text {
+  font-family: "Kalpurush";
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #dc3545;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
