@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import FacebookIcon from '@mui/icons-material/Facebook';
 import "./HeaderContainer.css";
+import { MDBIcon } from "mdb-react-ui-kit";
 
 const HeaderContainer = () => {
   return (
@@ -24,7 +24,7 @@ const HeaderContainer = () => {
           <div className="headerContent-button">
             <a href="https://www.facebook.com/groups/pencilglobal">
               <Button variant="outline-danger">
-                <FacebookIcon style={{ color: "#3b5998" }} />
+                <MDBIcon icon="facebook-f" className="mx-3" />
                 পেন্সিল ফেসবুক গ্রুপে জয়েন করার জন্য এইখানে ক্লিক করুন।
               </Button>{" "}
             </a>
