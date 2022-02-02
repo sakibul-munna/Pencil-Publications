@@ -1,5 +1,6 @@
 import React from "react";
-import StarIcon from "@mui/icons-material/Star";
+//import StarIcon from "@mui/icons-material/Star";
+import { MDBIcon } from "mdb-react-ui-kit";
 
 const HomeText = () => {
   return (
@@ -21,7 +22,7 @@ const HomeText = () => {
           }}
         />
 
-        <StarIcon style={{ color: "#F0393F", fontSize: "20px" }} />
+        <MDBIcon icon="star" style={{ color: "#F0393F", fontSize: "20px" }} />
 
         <hr
           className="my-hr"
@@ -61,7 +62,7 @@ const HomeText = () => {
           }}
         />
 
-        <StarIcon style={{ color: "#F0393F", fontSize: "20px" }} />
+        <MDBIcon icon="star" style={{ color: "#F0393F", fontSize: "20px" }} />
 
         <hr
           className="my-hr"
