@@ -39,9 +39,11 @@ const HomeText = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          fontFamily: "Kalpurush",
+          fontWeight: "bold",
         }}
       >
-        <h1 className="text-21">অমর একুশে গ্রন্থমেলা</h1>
+        <h1 className="text-21">অমর একুশে গ্রন্থমেলা ২০২২</h1>
       </div>
 
       <div
