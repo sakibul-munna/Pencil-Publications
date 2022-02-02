@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import FacebookIcon from '@mui/icons-material/Facebook';
 import "./HeaderContainer.css";
 
 const HeaderContainer = () => {

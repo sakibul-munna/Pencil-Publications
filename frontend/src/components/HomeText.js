@@ -1,5 +1,4 @@
 import React from "react";
-//import StarIcon from "@mui/icons-material/Star";
 import { MDBIcon } from "mdb-react-ui-kit";
 
 const HomeText = () => {
