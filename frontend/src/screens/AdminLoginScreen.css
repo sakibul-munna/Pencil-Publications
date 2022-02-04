@@ -1,0 +1,10 @@
+.login-input-box {
+  border-radius: 25px;
+  border: 2px solid #388761;
+}
+.login-submit-button {
+  border-radius: 25px;
+}
+.hrline {
+  border-bottom: 5px solid #388761;
+}
