@@ -6,6 +6,7 @@ import AboutScreen from "./screens/AboutScreen";
 import ContactScreen from "./screens/ContactScreen";
 import AuthorScreen from "./screens/AuthorScreen";
 import AdminLoginScreen from "./screens/AdminLoginScreen";
+import AdminDashboardScreen from "./screens/AdminDashboardScreen";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -19,8 +20,13 @@ const App = () => {
         <Route exact path="/contact" element={<ContactScreen />} />
         <Route exact path="/authors" element={<AuthorScreen />} />
         <Route exact path="/admin/login" element={<AdminLoginScreen />} />
+        <Route
+          exact
+          path="/admin/dashboard"
+          element={<AdminDashboardScreen />}
+        />
       </Routes>
-      {location.pathname !== "/admin/login" && <Footer />}
+      {location.pathname.match(/admin/) === null && <Footer />}
     </Container>
   );
 };

@@ -1,0 +1,17 @@
+.book-list-header-text {
+  font-family: "Kalpurush", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #dc3545;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  color: #388761;
+}
+.nav.nav-pills .nav-link.active {
+  background-color: #388761;
+  color: white !important;
+}
