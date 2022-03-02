@@ -10,6 +10,7 @@ import { Container } from "react-bootstrap";
 import "./AdminDashboardScreen.css";
 
 import AdminBookList from "../components/AdminBookList";
+import AdminAuthorList from "../components/AdminAuthorList";
 
 const AdminDashboardScreen = () => {
   const [justifyActive, setJustifyActive] = useState("tab1");
@@ -50,7 +51,9 @@ const AdminDashboardScreen = () => {
         <MDBTabsPane show={justifyActive === "tab1"}>
           <AdminBookList />
         </MDBTabsPane>
-        <MDBTabsPane show={justifyActive === "tab2"}>Tab 2 content</MDBTabsPane>
+        <MDBTabsPane show={justifyActive === "tab2"}>
+          <AdminAuthorList />
+        </MDBTabsPane>
       </MDBTabsContent>
     </Container>
   );
