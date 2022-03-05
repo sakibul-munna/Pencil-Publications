@@ -32,22 +32,22 @@ const Header = () => {
               </LinkContainer>
               <NavDropdown title="আমাদের প্রকাশিত বইসমূহ" id="nav-dropdown">
                 <LinkContainer to="/books/2019">
-                  <NavDropdown.Item clasName="text-dropdown">
+                  <NavDropdown.Item className="text-dropdown">
                     ২০১৯
                   </NavDropdown.Item>
                 </LinkContainer>
                 <LinkContainer to="/books/2020">
-                  <NavDropdown.Item clasName="text-dropdown">
+                  <NavDropdown.Item className="text-dropdown">
                     ২০২০
                   </NavDropdown.Item>
                 </LinkContainer>
                 <LinkContainer to="/books/2021">
-                  <NavDropdown.Item clasName="text-dropdown">
+                  <NavDropdown.Item className="text-dropdown">
                     ২০২১
                   </NavDropdown.Item>
                 </LinkContainer>
                 <LinkContainer to="/books/2022">
-                  <NavDropdown.Item clasName="text-dropdown">
+                  <NavDropdown.Item className="text-dropdown">
                     ২০২২
                   </NavDropdown.Item>
                 </LinkContainer>
