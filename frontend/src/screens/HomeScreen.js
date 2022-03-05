@@ -11,7 +11,7 @@ const HomeScreen = () => {
     <Container fluid className="gx-0">
       <HeaderContainer />
       <AdContainer />
-      <HomeText />
+      <HomeText headerText={"অমর একুশে গ্রন্থমেলা ২০২২"} />
       <Container className="py-3">
         <Row>
           {books.map((book) => (
