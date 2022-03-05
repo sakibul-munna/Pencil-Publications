@@ -46,6 +46,11 @@ const Header = () => {
                     ২০২১
                   </NavDropdown.Item>
                 </LinkContainer>
+                <LinkContainer to="/books/2022">
+                  <NavDropdown.Item clasName="text-dropdown">
+                    ২০২২
+                  </NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
 
               <LinkContainer to="/authors">
