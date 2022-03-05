@@ -28,19 +28,39 @@ const App = () => {
         />
         <Route
           path="/books/2019"
-          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০১৯"} />}
+          element={
+            <BooksScreen
+              headerText={"অমর একুশে গ্রন্থমেলা ২০১৯"}
+              selectedYear={"2019"}
+            />
+          }
         />
         <Route
           path="/books/2020"
-          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২০"} />}
+          element={
+            <BooksScreen
+              headerText={"অমর একুশে গ্রন্থমেলা ২০২০"}
+              selectedYear={"2020"}
+            />
+          }
         />
         <Route
           path="/books/2021"
-          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২১"} />}
+          element={
+            <BooksScreen
+              headerText={"অমর একুশে গ্রন্থমেলা ২০২১"}
+              selectedYear={"2021"}
+            />
+          }
         />
         <Route
           path="/books/2022"
-          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২২"} />}
+          element={
+            <BooksScreen
+              headerText={"অমর একুশে গ্রন্থমেলা ২০২২"}
+              selectedYear={"2022"}
+            />
+          }
         />
       </Routes>
       {location.pathname.match(/admin/) === null && <Footer />}
