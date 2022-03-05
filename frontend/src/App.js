@@ -8,6 +8,7 @@ import AuthorScreen from "./screens/AuthorScreen";
 import AdminLoginScreen from "./screens/AdminLoginScreen";
 import AdminDashboardScreen from "./screens/AdminDashboardScreen";
 import Footer from "./components/Footer";
+import BooksScreen from "./screens/BooksScreen";
 
 const App = () => {
   let location = useLocation();
@@ -24,6 +25,22 @@ const App = () => {
           exact
           path="/admin/dashboard"
           element={<AdminDashboardScreen />}
+        />
+        <Route
+          path="/books/2019"
+          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০১৯"} />}
+        />
+        <Route
+          path="/books/2020"
+          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২০"} />}
+        />
+        <Route
+          path="/books/2021"
+          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২১"} />}
+        />
+        <Route
+          path="/books/2022"
+          element={<BooksScreen headerText={"অমর একুশে গ্রন্থমেলা ২০২২"} />}
         />
       </Routes>
       {location.pathname.match(/admin/) === null && <Footer />}
