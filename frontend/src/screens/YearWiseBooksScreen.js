@@ -5,7 +5,7 @@ import BookCard from "../components/BookCard";
 import HomeText from "../components/HomeText";
 const { toBengaliNumber } = require("bengali-number");
 
-const BooksScreen = ({ headerText, selectedYear }) => {
+const YearWiseBooksScreen = ({ headerText, selectedYear }) => {
   const selectedBooks = books.filter((book) => {
     return book.publishedYear === toBengaliNumber(selectedYear).toString();
   });
@@ -25,4 +25,4 @@ const BooksScreen = ({ headerText, selectedYear }) => {
   );
 };
 
-export default BooksScreen;
+export default YearWiseBooksScreen;

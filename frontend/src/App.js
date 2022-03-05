@@ -8,7 +8,7 @@ import AuthorScreen from "./screens/AuthorScreen";
 import AdminLoginScreen from "./screens/AdminLoginScreen";
 import AdminDashboardScreen from "./screens/AdminDashboardScreen";
 import Footer from "./components/Footer";
-import BooksScreen from "./screens/BooksScreen";
+import YearWiseBooksScreen from "./screens/YearWiseBooksScreen";
 
 const App = () => {
   let location = useLocation();
@@ -29,7 +29,7 @@ const App = () => {
         <Route
           path="/books/2019"
           element={
-            <BooksScreen
+            <YearWiseBooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০১৯"}
               selectedYear={"2019"}
             />
@@ -38,7 +38,7 @@ const App = () => {
         <Route
           path="/books/2020"
           element={
-            <BooksScreen
+            <YearWiseBooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২০"}
               selectedYear={"2020"}
             />
@@ -47,7 +47,7 @@ const App = () => {
         <Route
           path="/books/2021"
           element={
-            <BooksScreen
+            <YearWiseBooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২১"}
               selectedYear={"2021"}
             />
@@ -56,7 +56,7 @@ const App = () => {
         <Route
           path="/books/2022"
           element={
-            <BooksScreen
+            <YearWiseBooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২২"}
               selectedYear={"2022"}
             />
