@@ -58,32 +58,32 @@ const Header = () => {
               </LinkContainer>
 
               <NavDropdown title="বিষয়" id="nav-dropdown">
-                <LinkContainer to="subject/উপন্যাস">
+                <LinkContainer to="subject/novels">
                   <NavDropdown.Item className="text-dropdown">
                     উপন্যাস
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/গল্প">
+                <LinkContainer to="subject/stories">
                   <NavDropdown.Item className="text-dropdown">
                     গল্প
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/কবিতা">
+                <LinkContainer to="subject/poems">
                   <NavDropdown.Item className="text-dropdown">
                     কবিতা
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/শিশুতোষ">
+                <LinkContainer to="subject/childish">
                   <NavDropdown.Item className="text-dropdown">
                     শিশুতোষ
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/রম্য">
+                <LinkContainer to="subject/comics">
                   <NavDropdown.Item className="text-dropdown">
                     রম্য
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/ভ্রমণকাহিণী">
+                <LinkContainer to="subject/travelStories">
                   <NavDropdown.Item
                     href="subject/ভ্রমণকাহিণী"
                     className="text-dropdown"
@@ -91,12 +91,12 @@ const Header = () => {
                     ভ্রমণকাহিণী
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/প্রবন্ধ">
+                <LinkContainer to="subject/essays">
                   <NavDropdown.Item className="text-dropdown">
                     প্রবন্ধ
                   </NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="subject/খেলাধুলা">
+                <LinkContainer to="subject/sports">
                   <NavDropdown.Item className="text-dropdown">
                     খেলাধুলা
                   </NavDropdown.Item>

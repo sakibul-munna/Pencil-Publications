@@ -74,8 +74,8 @@ const books = [
     title: "সাদা পালকের নির্জনতা",
     author: "মাহরীন ফেরদৌস",
     genre: {
-      name: "উপন্যাস",
-      _id: 1,
+      name: "গল্প",
+      _id: 2,
     },
     price: "৪৮০",
     pageNumber: "২৯৬",
@@ -88,8 +88,8 @@ const books = [
     title: "সাদা পালকের নির্জনতা",
     author: "মাহরীন ফেরদৌস",
     genre: {
-      name: "উপন্যাস",
-      _id: 1,
+      name: "গল্প",
+      _id: 2,
     },
     price: "৪৮০",
     pageNumber: "২৯৬",
@@ -102,8 +102,8 @@ const books = [
     title: "সাদা পালকের নির্জনতা",
     author: "মাহরীন ফেরদৌস",
     genre: {
-      name: "উপন্যাস",
-      _id: 1,
+      name: "গল্প",
+      _id: 2,
     },
     price: "৪৮০",
     pageNumber: "২৯৬",

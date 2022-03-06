@@ -8,7 +8,7 @@ import AuthorScreen from "./screens/AuthorScreen";
 import AdminLoginScreen from "./screens/AdminLoginScreen";
 import AdminDashboardScreen from "./screens/AdminDashboardScreen";
 import Footer from "./components/Footer";
-import YearWiseBooksScreen from "./screens/YearWiseBooksScreen";
+import BooksScreen from "./screens/BooksScreen";
 
 const App = () => {
   let location = useLocation();
@@ -28,8 +28,9 @@ const App = () => {
         />
         <Route
           path="/books/2019"
+          exact
           element={
-            <YearWiseBooksScreen
+            <BooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০১৯"}
               selectedYear={"2019"}
             />
@@ -37,8 +38,9 @@ const App = () => {
         />
         <Route
           path="/books/2020"
+          exact
           element={
-            <YearWiseBooksScreen
+            <BooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২০"}
               selectedYear={"2020"}
             />
@@ -46,8 +48,9 @@ const App = () => {
         />
         <Route
           path="/books/2021"
+          exact
           element={
-            <YearWiseBooksScreen
+            <BooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২১"}
               selectedYear={"2021"}
             />
@@ -55,12 +58,55 @@ const App = () => {
         />
         <Route
           path="/books/2022"
+          exact
           element={
-            <YearWiseBooksScreen
+            <BooksScreen
               headerText={"অমর একুশে গ্রন্থমেলা ২০২২"}
               selectedYear={"2022"}
             />
           }
+        />
+        <Route
+          path="subject/novels"
+          exact
+          element={<BooksScreen headerText={"উপন্যাস"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/stories"
+          exact
+          element={<BooksScreen headerText={"গল্প"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/poems"
+          exact
+          element={<BooksScreen headerText={"কবিতা"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/childish"
+          exact
+          element={<BooksScreen headerText={"শিশুতোষ"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/comics"
+          exact
+          element={<BooksScreen headerText={"রম্য"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/travelStories"
+          exact
+          element={
+            <BooksScreen headerText={"ভ্রমণকাহিণী"} selectedYear={"0"} />
+          }
+        />
+        <Route
+          path="subject/essays"
+          exact
+          element={<BooksScreen headerText={"প্রবন্ধ"} selectedYear={"0"} />}
+        />
+        <Route
+          path="subject/sports"
+          exact
+          element={<BooksScreen headerText={"খেলাধুলা"} selectedYear={"0"} />}
         />
       </Routes>
       {location.pathname.match(/admin/) === null && <Footer />}

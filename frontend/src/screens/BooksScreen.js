@@ -5,12 +5,20 @@ import BookCard from "../components/BookCard";
 import HomeText from "../components/HomeText";
 const { toBengaliNumber } = require("bengali-number");
 
-const YearWiseBooksScreen = ({ headerText, selectedYear }) => {
-  const selectedBooks = books.filter((book) => {
-    return book.publishedYear === toBengaliNumber(selectedYear).toString();
-  });
+const BooksScreen = ({ headerText, selectedYear }) => {
+  let selectedBooks = [];
+  console.log("header " + headerText + " selected " + selectedYear);
+  if (selectedYear === "0") {
+    selectedBooks = books.filter((book) => {
+      return book.genre.name === headerText.toString();
+    });
+  } else {
+    selectedBooks = books.filter((book) => {
+      return book.publishedYear === toBengaliNumber(selectedYear).toString();
+    });
+  }
   return (
-    <Container fluid className="gx-0 my-4">
+    <Container fluid style={{ minHeight: "600px" }} className="gx-0 my-4">
       <HomeText headerText={headerText} />
       <Container className="py-3">
         <Row>
@@ -25,4 +33,4 @@ const YearWiseBooksScreen = ({ headerText, selectedYear }) => {
   );
 };
 
-export default YearWiseBooksScreen;
+export default BooksScreen;

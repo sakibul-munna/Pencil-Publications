@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
-const { toBengaliNumber } = require("bengali-number");
 
 const HomeText = ({ headerText }) => {
   return (
